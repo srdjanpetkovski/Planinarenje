@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;800&display=swap");
+
+/****************
+variables
+****************/
+$fontFamily: "Raleway", sans-serif;
+$fontSize: 16px;
+$black: #000;
+$white: #fff;
+$olivia: #c0c727;
+$darkOlivia: #44796f;
+$lightBlue: #60c4f5;
+$lightGray: #9190a5;
+$padding: 50px 0;
+$transition: 0.4s ease;
+
+/****************
+reset style
+****************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    transition: $transition;
+    font-weight: 800;
+    font-size: 1.3rem;
+}
+ul {
+    list-style: none;
+}
+
+/****************
+mixins
+****************/
+@mixin flex($justify, $align, $direction: row) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+/****************
+basic styles
+****************/
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-image: linear-gradient(rgba($darkOlivia, 0.6), rgba($darkOlivia, 0.7)), url(/img/bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: $fontFamily;
+    font-size: $fontSize;
+}
+img {
+    width: 100%;
+}
+main {
+    max-width: 1140px;
+    width: 100%;
+    padding: 95px 0;
+    margin: auto;
+    @media (max-width: 767px){
+        width: 90%;
+        padding: 30px 0;
+    }
+    nav {
+        @include flex(space-between, center);
+        a {
+            color: $white;
+            letter-spacing: 2px;
+            span {
+                color: $olivia;
+            }
+        }
+        .icons {
+            a {
+                margin-right: 10px;
+                i {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+}
+
+/****************
+header
+****************/
+header {
+    @include flex(space-between, center);
+    padding: 50px 0 ;
+    article:first-child {
+        flex: 0 0 40%;
+        @include flex(center, flex-start, column);
+        div:first-child {
+            background: $darkOlivia;
+        }
+        div:last-child {
+            background: $lightBlue;
+        }
+    }
+    article:last-child {
+        flex: 0 0 60%;
+    }
+}
