@@ -142,10 +142,12 @@ header article:first-child {
 
 header article:first-child div:first-child {
   background: #44796f;
+  padding: 50px 60px 50px 20px;
 }
 
 header article:first-child div:last-child {
   background: #60c4f5;
+  padding: 50px 60px 50px 20px;
 }
 
 header article:last-child {
