@@ -168,5 +168,59 @@ services
   text-align: center;
   padding: 50px 0;
 }
+.services h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  color: #000;
+}
+.services p {
+  margin-bottom: 40px;
+}
+.services article {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.services article div {
+  flex: 0 0 33.33%;
+}
+.services article div h4 {
+  margin-bottom: 20px;
+}
+.services article div:nth-child(1) {
+  border-right: 1px solid #44796f;
+}
+.services article div:nth-child(1) i {
+  color: #c0c727;
+  font-size: 2.5rem;
+  border: 1px solid #44796f;
+  border-radius: 50%;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.services article div:nth-child(2) {
+  border-right: 1px solid #44796f;
+}
+.services article div:nth-child(2) i {
+  color: #44796f;
+  font-size: 2.5rem;
+  border: 1px solid #44796f;
+  border-radius: 50%;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.services article div:nth-child(3) i {
+  color: #60c4f5;
+  font-size: 2.5rem;
+  border: 1px solid #44796f;
+  border-radius: 50%;
+  padding: 20px;
+  margin-bottom: 20px;
+}
 
 /*# sourceMappingURL=style.css.map */

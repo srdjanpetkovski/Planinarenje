@@ -164,4 +164,52 @@ services
     background-color: $white;
     text-align: center;
     padding: $padding;
+    h2 {
+        @include h2;
+        color: $black;
+    }
+    p  {
+        margin-bottom: 40px;
+    }
+    article {
+        @include flex(space-between, center);
+        div {
+            flex: 0 0 33.33%;
+            h4 {
+                margin-bottom: 20px;
+            }
+        }
+        div:nth-child(1) {
+            border-right: 1px solid $darkOlivia;
+            i {
+                color: $olivia;
+                font-size: 2.5rem;
+                border: 1px solid $darkOlivia;
+                border-radius: 50%;
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+        }
+        div:nth-child(2) {
+            border-right: 1px solid $darkOlivia;
+            i {
+                color: $darkOlivia;
+                font-size: 2.5rem;
+                border: 1px solid $darkOlivia;
+                border-radius: 50%;
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+        }
+        div:nth-child(3) {
+            i {
+                color: $lightBlue;
+                font-size: 2.5rem;
+                border: 1px solid $darkOlivia;
+                border-radius: 50%;
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+        }
+    }
 }
