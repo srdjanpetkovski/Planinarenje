@@ -22,6 +22,11 @@ ul {
   list-style: none;
 }
 
+img {
+  width: 100%;
+  display: block;
+}
+
 /****************
 mixins
 ****************/
@@ -66,12 +71,26 @@ main nav {
   align-items: center;
   flex-direction: row;
 }
+@media (max-width: 767px) {
+  main nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
 main nav a {
   color: #fff;
   letter-spacing: 2px;
 }
 main nav a span {
   color: #c0c727;
+}
+@media (max-width: 767px) {
+  main nav .icons {
+    margin-top: 10px;
+  }
 }
 main nav .icons a {
   margin-right: 10px;
@@ -93,6 +112,11 @@ header {
 }
 header article:first-child {
   flex: 0 0 40%;
+}
+@media (max-width: 767px) {
+  header article:first-child {
+    flex: 0 0 100%;
+  }
 }
 header article:first-child div:first-child {
   background: #44796f;
@@ -155,9 +179,20 @@ header article:first-child div:last-child button:hover {
 header article:last-child {
   flex: 0 0 60%;
 }
+@media (max-width: 767px) {
+  header article:last-child {
+    flex: 0 0 100%;
+    order: -2;
+  }
+}
 header article:last-child img {
   height: 528.8px;
   display: block;
+}
+@media (max-width: 767px) {
+  header article:last-child img {
+    height: auto;
+  }
 }
 
 /****************
@@ -179,6 +214,11 @@ services
 .services p {
   margin-bottom: 40px;
 }
+@media (max-width: 767px) {
+  .services p {
+    padding: 0 5px;
+  }
+}
 .services article {
   display: flex;
   flex-wrap: wrap;
@@ -188,6 +228,11 @@ services
 }
 .services article div {
   flex: 0 0 33.33%;
+}
+@media (max-width: 767px) {
+  .services article div {
+    flex: 0 0 100%;
+  }
 }
 .services article div h4 {
   margin-bottom: 20px;
@@ -221,6 +266,171 @@ services
   border-radius: 50%;
   padding: 20px;
   margin-bottom: 20px;
+}
+
+/****************
+gallery
+****************/
+.gallery {
+  padding: 50px 0;
+  background-color: #c0c727;
+  text-align: center;
+}
+.gallery h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+.gallery .owl-carousel {
+  width: 97%;
+  margin: 30px auto;
+}
+.gallery .owl-carousel .owl-nav {
+  margin-bottom: 20px;
+}
+
+/****************
+programs
+****************/
+.programs {
+  background-color: #fff;
+  padding: 50px;
+}
+@media (max-width: 767px) {
+  .programs {
+    padding: 50px 20px;
+  }
+}
+.programs article {
+  width: 90%;
+  margin: auto;
+  box-shadow: 0 0 10px 5px #9190a5;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+@media (max-width: 767px) {
+  .programs article {
+    width: 100%;
+  }
+}
+.programs article div {
+  flex: 0 0 50%;
+}
+@media (max-width: 767px) {
+  .programs article div {
+    flex: 0 0 100%;
+  }
+}
+.programs article .text {
+  padding: 0 40px;
+}
+@media (max-width: 767px) {
+  .programs article .text {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+}
+.programs article .text h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  color: #000;
+}
+.programs article .text button {
+  background: #60c4f5;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding: 10px 30px;
+  cursor: pointer;
+  border: none;
+  border-radius: 30px;
+  transition: 0.4s ease;
+  margin-top: 30px;
+}
+.programs article .text button:hover {
+  background: #9190a5;
+}
+.programs article .text button:hover {
+  background-color: #c0c727;
+}
+@media (max-width: 767px) {
+  .programs article div:nth-child(3) {
+    order: 1;
+  }
+}
+
+/****************
+footer
+****************/
+footer {
+  background-color: #44796f;
+  color: #fff;
+  text-align: center;
+  padding: 50px 0;
+}
+footer h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+@media (max-width: 767px) {
+  footer p {
+    padding: 0 20px;
+  }
+}
+footer form {
+  margin-top: 30px;
+}
+@media (max-width: 767px) {
+  footer form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+footer form .email {
+  padding: 10px 0 10px 30px;
+  border: none;
+  border-radius: 50px 0 0 50px;
+  font-size: 1rem;
+}
+@media (max-width: 767px) {
+  footer form .email {
+    border-radius: 50px;
+    margin-bottom: 20px;
+  }
+}
+footer form button {
+  background: #c0c727;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding: 10px 30px;
+  cursor: pointer;
+  border: none;
+  border-radius: 0 50px 50px 0;
+  transition: 0.4s ease;
+  margin-left: -4px;
+}
+footer form button:hover {
+  background: #9190a5;
+}
+@media (max-width: 767px) {
+  footer form button {
+    border-radius: 50px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

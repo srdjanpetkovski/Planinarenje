@@ -31,6 +31,10 @@ a {
 ul {
     list-style: none;
 }
+img {
+    width: 100%;
+    display: block;
+}
 
 /****************
 mixins
@@ -95,6 +99,9 @@ main {
     }
     nav {
         @include flex(space-between, center);
+        @media (max-width: 767px){
+            @include flex(center, center, column);
+        }
         a {
             color: $white;
             letter-spacing: 2px;
@@ -103,6 +110,9 @@ main {
             }
         }
         .icons {
+            @media (max-width: 767px){
+                margin-top: 10px;
+            }
             a {
                 margin-right: 10px;
                 i {
@@ -121,6 +131,9 @@ header {
     margin-top: 50px;
     article:first-child {
         flex: 0 0 40%;
+        @media (max-width: 767px){
+            flex: 0 0 100%;
+        }
         div:first-child {
             background: $darkOlivia;
             padding: 50px;
@@ -150,9 +163,16 @@ header {
     }
     article:last-child {
         flex: 0 0 60%;
+        @media (max-width: 767px){
+            flex: 0 0 100%;
+            order: -2;
+        }
         img {
             height: 528.8px;
             display: block;
+            @media (max-width: 767px){
+                height: auto;
+            }
         }
     }
 }
@@ -170,11 +190,17 @@ services
     }
     p  {
         margin-bottom: 40px;
+        @media (max-width: 767px){
+            padding: 0 5px;
+        }
     }
     article {
         @include flex(space-between, center);
         div {
             flex: 0 0 33.33%;
+            @media (max-width: 767px){
+                flex: 0 0 100%;
+            }
             h4 {
                 margin-bottom: 20px;
             }
@@ -209,6 +235,125 @@ services
                 border-radius: 50%;
                 padding: 20px;
                 margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+/****************
+gallery
+****************/
+.gallery {
+    padding: $padding;
+    background-color: $olivia;
+    text-align: center;
+    h2 {
+        @include h2;
+    }
+    .owl-carousel {
+        width: 97%;
+        margin: 30px auto;
+        .owl-nav {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+/****************
+programs
+****************/
+.programs{
+    background-color: $white;
+    padding: 50px;
+    @media (max-width: 767px){
+        padding: 50px 20px;
+    }
+    article {
+        width: 90%;
+        margin: auto;
+        box-shadow: 0 0 10px 5px $lightGray;
+        @include flex(space-between, center);
+        @media (max-width: 767px){
+            width: 100%;
+        }
+        div {
+            flex: 0 0 50%;
+            @media (max-width: 767px){
+                flex: 0 0 100%;
+            }
+        }
+        .text {
+            padding: 0 40px;
+            @media (max-width: 767px){
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+            h2 {
+                @include h2;
+                color: $black;
+            }
+            button {
+                @include btn($lightBlue);
+                &:hover {
+                    background-color: $olivia;
+                }
+            }
+        }
+        div:nth-child(3) {
+            @media (max-width: 767px){
+                order: 1;
+            }
+        }
+    }
+}
+
+/****************
+footer
+****************/
+footer {
+    background-color: $darkOlivia;
+    color: $white;
+    text-align: center;
+    padding: $padding;
+    h2 {
+        @include h2;
+    }
+    p {
+        @media (max-width: 767px){
+            padding: 0 20px;
+        }
+    }
+    form {
+        margin-top: 30px;
+        @media (max-width: 767px){
+            @include flex(center, center, column);
+        }
+        .email {
+            padding: 10px 0 10px 30px;
+            border: none;
+            border-radius: 50px 0 0 50px;
+            font-size: 1rem;
+            @media (max-width: 767px){
+                border-radius: 50px;
+                margin-bottom: 20px;
+            }
+        }
+        button {
+            background: $olivia;
+            color: $black;
+            text-transform: uppercase;
+            font-size: 1rem;
+            padding: 10px 30px;
+            cursor: pointer;
+            border: none;
+            border-radius: 0 50px 50px 0;
+            transition: $transition;
+            margin-left: -4px;
+            &:hover {
+                background: $lightGray;
+            }
+            @media (max-width: 767px){
+                border-radius: 50px;
             }
         }
     }
